@@ -827,7 +827,9 @@ CREATE TABLE `listings` (
   KEY `index_listings_on_open` (`open`) USING BTREE,
   KEY `index_on_author_id_and_deleted` (`author_id`,`deleted`),
   KEY `community_author_deleted` (`community_id`,`author_id`,`deleted`),
-  KEY `index_listings_on_state` (`state`)
+  KEY `index_listings_on_state` (`state`),
+  KEY `listings_homepage_query` (`community_id`,`open`,`state`,`deleted`,`valid_until`,`sort_date`),
+  KEY `listings_updates_email` (`community_id`,`open`,`state`,`deleted`,`valid_until`,`updates_email_at`,`created_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `locations`;
@@ -2361,8 +2363,9 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20190115083941'),
 ('20190121064002'),
 ('20190208032229'),
-('20190228084827'),
 ('20190213073532'),
-('20190213082646');
+('20190213082646'),
+('20190228084827'),
+('20190305112030');
 
 

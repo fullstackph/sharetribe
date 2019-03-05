@@ -63,6 +63,8 @@
 #  index_listings_on_state             (state)
 #  index_listings_on_uuid              (uuid) UNIQUE
 #  index_on_author_id_and_deleted      (author_id,deleted)
+#  listings_homepage_query             (community_id,open,state,deleted,valid_until,sort_date)
+#  listings_updates_email              (community_id,open,state,deleted,valid_until,updates_email_at,created_at)
 #  person_listings                     (community_id,author_id)
 #  updates_email_listings              (community_id,open,updates_email_at)
 #
